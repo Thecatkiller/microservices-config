@@ -1,10 +1,31 @@
+spring:
+  profiles: eureka-server-instance-1
+
 server:
-  port: 8760
+  port: ${SERVER_PORT:8760}
 eureka:
   instance:
     hostname: localhost
-  client:
+  #client:
     registerWithEureka: false
     fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    #serviceUrl:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+---
+
+
+spring:
+  profiles: eureka-server-instance-2
+
+server:
+  port: ${SERVER_PORT:8761}
+eureka:
+  instance:
+    hostname: localhost2
+  #client:
+    registerWithEureka: false
+    fetchRegistry: false
+    #serviceUrl:
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
