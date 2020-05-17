@@ -1,3 +1,9 @@
+eureka:
+  datacenter: centro-datos-local
+  environment: desarrollo
+
+---
+
 spring:
   profiles: eureka-server-instance-1
 
