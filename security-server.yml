@@ -1,0 +1,6 @@
+server:
+  port: ${PORT:0}
+
+active-directory:
+  domain: 'idigital.pe'
+  ldap: 'ldap://192.168.0.109:389'

@@ -1,31 +1,21 @@
 # Discovery Server Access
 zuul:
   sensitive-headers: Cookie,Set-Cookie
-  prefix: /api
   routes:
-    ms-authentication-service:
-      path: /authentication/**
-      serviceId: app-ms-authentication
-      stripPrefix: false
+    oauth:
+      path: /oauth/**
+      serviceId: security-server
     greetings:
       path: /greeting/**
       serviceId: greeting-service
       stripPrefix: false
-    servicelogin:
-      path: /service-login-user/**
-      serviceId: service-login-user
-      stripPrefix: false
-    authorization:
-      path: /authorization/**
-      serviceId: auth-config-server
-      stripPrefix: true
-    cypher:
-      path: /cypher/**
-      serviceId: SERVICE-CYPHER
-      stripPrefix: true
-#eureka:
-  #client:
-    #registerWithEureka: false
+
+security:
+  path-auth: oauth
+  oauth2:
+    resource:
+      jwt:
+        key-value: 'MIICWwIBAAKBgGtQ4ylb/cc2fez21oSEisr95JdurRnz/xcW4dja3zePJmRp7sFjYqv52x4Hc+n9YSeOYMGZ2QwzItDkBPzyDOVCE/eTX2a3fEYqNGiNWUTYJvtywM6SGHvgtJ97w4sL4/YlAk6V1xdO6Ea+89IxuHrKFiCDoGmMrtdjyz7JDmmHAgMBAAECgYAiE+Z+vLqCpxgnxl5qaFhWi3cqazfGtQd9AoQnQ6F8WBW97zGk8XVk3Quqpn01gYN3dyvcbolQ6XAV20KGPCrBumubAUAXJjoxmmK8RmWSc5EJpvaaNwQ35Jp2lxtL0VzLQYVxuLWRaokvNogPQUEIjo17W8/kTqsZmukFGg6p2QJBAM8n7FXF+kg4fTTTaQ=='
 
 server:
   port: 9000
