@@ -23,9 +23,9 @@ zuul:
       path: /cypher/**
       serviceId: SERVICE-CYPHER
       stripPrefix: true
-eureka:
-  client:
-    registerWithEureka: false
+#eureka:
+  #client:
+    #registerWithEureka: false
 
 server:
   port: 9000
