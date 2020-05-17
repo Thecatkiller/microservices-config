@@ -5,12 +5,12 @@ server:
   port: ${SERVER_PORT:8760}
 eureka:
   instance:
-    hostname: localhost
-  #client:
+    hostname: ${EUREKA_HOST_NAME}
+  client:
     registerWithEureka: false
     fetchRegistry: false
-    #serviceUrl:
-      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    serviceUrl:
+      defaultZone: ${EUREKA_URL}
 
 
 ---
@@ -23,9 +23,9 @@ server:
   port: ${SERVER_PORT:8761}
 eureka:
   instance:
-    hostname: localhost2
-  #client:
+    hostname: ${EUREKA_HOST_NAME}
+  client:
     registerWithEureka: false
     fetchRegistry: false
-    #serviceUrl:
-      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    serviceUrl:
+      defaultZone: ${EUREKA_URL}
