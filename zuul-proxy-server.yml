@@ -1,0 +1,31 @@
+# Discovery Server Access
+zuul:
+  sensitive-headers: Cookie,Set-Cookie
+  prefix: /api
+  routes:
+    ms-authentication-service:
+      path: /authentication/**
+      serviceId: app-ms-authentication
+      stripPrefix: false
+    greetings:
+      path: /greeting/**
+      serviceId: greeting-service
+      stripPrefix: false
+    servicelogin:
+      path: /service-login-user/**
+      serviceId: service-login-user
+      stripPrefix: false
+    authorization:
+      path: /authorization/**
+      serviceId: auth-config-server
+      stripPrefix: true
+    cypher:
+      path: /cypher/**
+      serviceId: SERVICE-CYPHER
+      stripPrefix: true
+eureka:
+  client:
+    registerWithEureka: false
+
+server:
+  port: 9000
